@@ -1,0 +1,58 @@
+{
+	"name": "pi-bg-bash",
+	"version": "0.4.1",
+	"description": "Runs the model's bash commands as detached background tasks and wakes the agent when they finish",
+	"keywords": [
+		"pi-package",
+		"pi",
+		"pi-extension"
+	],
+	"license": "MIT",
+	"author": "Gage Vander Clay <gvanderclay@gmail.com>",
+	"homepage": "https://github.com/gvanderclay/pi-bg-bash#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/gvanderclay/pi-bg-bash.git"
+	},
+	"bugs": {
+		"url": "https://github.com/gvanderclay/pi-bg-bash/issues"
+	},
+	"type": "module",
+	"engines": {
+		"node": ">=22.19.0"
+	},
+	"packageManager": "pnpm@10.33.0",
+	"pi": {
+		"extensions": [
+			"./src/index.ts"
+		]
+	},
+	"files": [
+		"src",
+		"README.md",
+		"LICENSE",
+		"CHANGELOG.md"
+	],
+	"scripts": {
+		"lint": "biome ci .",
+		"typecheck": "tsc -p .",
+		"test": "node --test --test-timeout=30000 test/*.test.ts",
+		"check": "pnpm lint && pnpm typecheck && pnpm test"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"peerDependencies": {
+		"@earendil-works/pi-coding-agent": "*",
+		"@earendil-works/pi-tui": "*",
+		"typebox": "*"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.5.15",
+		"@earendil-works/pi-coding-agent": "1.3.0",
+		"@earendil-works/pi-tui": "1.3.0",
+		"@types/node": "26.6.5",
+		"typebox": "1.3.37",
+		"typescript": "7.0.2"
+	}
+}

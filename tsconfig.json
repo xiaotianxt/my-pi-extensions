@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ES2024",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
+    "types": [
+      "node"
+    ]
+  },
+  "files": [
+    "extensions/codex-pool.ts",
+    "extensions/codex-diagnostics.ts",
+    "extensions/herdr-tab-title.ts",
+    "extensions/openai-codex.ts",
+    "extensions/polished-footer.ts",
+    "extensions/herdr-ui-state.ts"
+  ]
+}

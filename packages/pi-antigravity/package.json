@@ -1,0 +1,68 @@
+{
+  "name": "pi-antigravity",
+  "version": "0.7.2",
+  "description": "Personal Antigravity / Cloud Code Assist provider for Pi Coding Agent",
+  "author": "Rahul Arya",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rahularya01/pi-antigravity.git"
+  },
+  "homepage": "https://github.com/Rahularya01/pi-antigravity#readme",
+  "bugs": {
+    "url": "https://github.com/Rahularya01/pi-antigravity/issues"
+  },
+  "type": "module",
+  "main": "./src/index.ts",
+  "keywords": [
+    "pi-package",
+    "pi-extension",
+    "antigravity",
+    "google",
+    "oauth",
+    "provider"
+  ],
+  "files": [
+    "LICENSE",
+    "README.md",
+    "src",
+    "tsconfig.json"
+  ],
+  "packageManager": "bun@1.4.0",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "security-check": "bun scripts/security-check.ts",
+    "test": "bun scripts/test-transcript-request.ts && bun scripts/test-model-routing.ts && bun scripts/test-model-discovery.ts && bun scripts/test-usage-formatter.ts && bun scripts/test-stream-sse.ts && bun scripts/test-stream-header-deadline.ts && bun scripts/test-http-proxy.ts && bun scripts/test-image-gen.ts",
+    "smoke:tools": "bun scripts/smoke-tool-schema.ts",
+    "smoke:models": "bun scripts/smoke-all-models.mjs",
+    "check": "bun run typecheck && bun run lint && bun run format:check && bun run security-check && bun run test"
+  },
+  "pi": {
+    "extensions": [
+      "./src/index.ts"
+    ]
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-ai": ">=0.87.0",
+    "@earendil-works/pi-coding-agent": ">=0.87.0"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-ai": "0.87.0",
+    "@earendil-works/pi-coding-agent": "0.87.0",
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^26.1.1",
+    "eslint": "^10.7.0",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.7.0",
+    "prettier": "^3.9.5",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.64.0"
+  },
+  "dependencies": {
+    "undici": "^8.10.0"
+  }
+}
